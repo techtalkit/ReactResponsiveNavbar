@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {FaFacebookSquare,FaInstagramSquare,FaYoutubeSquare} from 'react-icons/fa'
 import './navbar.css';
+import {GiHamburgerMenu} from 'react-icons/gi';
 
 const Navbar = () => {
+    const[showMediaIcons,setshowMediaIcons]=useState(false);
     return (
         <>
             <nav className="main-nav">
@@ -13,7 +15,7 @@ const Navbar = () => {
                     </h2>
                 </div>
                 {/* 2nd part menu links */}
-                <div className="menu-link">
+                <div className={showMediaIcons ? "menu-link mobile-menu-link":"menu-link"}>
                     <ul>
                         <li>
                             <a href="">Home</a>
@@ -36,6 +38,12 @@ const Navbar = () => {
                         <li><a href="#" target="_thapa"><FaInstagramSquare className="instagram" /></a></li>
                         <li><a href="#" target="_thapa"><FaYoutubeSquare className="youtube" /></a></li>
                     </ul>
+                {/* Hamburger menu start */}
+                <div className="hamburger-menu">
+                    <a href="" onClick={()=> setshowMediaIcons(!showMediaIcons)}>
+                        <GiHamburgerMenu />
+                    </a>
+                </div>
                 </div>
             </nav>
             {/* hero section */}
