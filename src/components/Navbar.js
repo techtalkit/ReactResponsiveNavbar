@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {FaFacebookSquare,FaInstagramSquare,FaYoutubeSquare} from 'react-icons/fa'
 import './navbar.css';
 import {GiHamburgerMenu} from 'react-icons/gi';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const[showMediaIcons,setshowMediaIcons]=useState(false);
@@ -18,16 +19,16 @@ const Navbar = () => {
                 <div className={showMediaIcons ? "menu-link mobile-menu-link":"menu-link"}>
                     <ul>
                         <li>
-                            <a href="">Home</a>
+                            <NavLink to="/">Home</NavLink>
                         </li>
                         <li>
-                            <a href="">About</a>
+                            <NavLink to="/about">About</NavLink>
                         </li>
                         <li>
-                            <a href="">Services</a>
+                            <NavLink to="/services">Services</NavLink>
                         </li>
                         <li>
-                            <a href="">Contact</a>
+                            <NavLink to="/contact">Contact</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -47,10 +48,10 @@ const Navbar = () => {
                 </div>
             </nav>
             {/* hero section */}
-            <section className='hero-section'>
+            {/* <section className='hero-section'>
                 <h1>Welcome to</h1>
                 <h1>Thapa Technical</h1>
-            </section>
+            </section> */}
         </>
     )
 }
